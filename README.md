@@ -8,8 +8,6 @@ If facing errors related to dependencies from python packages, create a virtual 
 
     .\venv\Scripts\Activate
 
-This activates your virtual environment.
-=============================
 
-install all python dependencies in your virtual environment required for the following imports-
+Install all python dependencies in your virtual environment required for the following imports-
 numpy, pillow, pandas, tkinter, opencv-contrib-python, os, csv, time, datetime
