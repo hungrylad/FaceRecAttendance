@@ -17,3 +17,4 @@ Install all python dependencies in your virtual environment required for the fol
 numpy, pillow, pandas, tkinter, opencv-contrib-python, os, csv, time, datetime
 
 for eg. pip install opencv-contrib-python
+pip install numpy..... and so on
