@@ -1,3 +1,7 @@
+Run UI.py to access functionalities.
+
+===================================================================================
+
 If facing errors related to dependencies from python packages, create a virtual environment and install dependencies in it.
 
 1. To create a virtual environment, open powershell as administrator on windows and execute the following command in order to allow permissions to start a python virtual environment:
