@@ -16,5 +16,5 @@ If facing errors related to dependencies from python packages, create a virtual 
 Install all python dependencies in your virtual environment required for the following imports-
 numpy, pillow, pandas, tkinter, opencv-contrib-python, os, csv, time, datetime
 
-for eg. pip install opencv-contrib-python
+for eg. pip install opencv-contrib-python,
 pip install numpy..... and so on
