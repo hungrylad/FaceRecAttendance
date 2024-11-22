@@ -1,5 +1,12 @@
 Run UI.py to access functionalities.
 
+1. Register a new student (face data collected during registration via Webcam, make sure Webcam is active and accessible)
+2. Train the model for the collected data after registrations are done, using 'Train' button at the bottom right
+3. To mark attendance, click on 'Take Attendance', enter the subject name. Attendance will be marked if the face of the student is recognized based on face data previously collected on which the model has been trained.
+4. To view marked attendances, click on 'View Attendance', select a subject name. This opens a pop-up with a drop down to choose the date for which attendance will be shown.
+5. Select the date from the drop down to view attendance.
+6. 'Exit' to close the program.
+
 ===================================================================================
 
 If facing errors related to dependencies from python packages, create a virtual environment and install dependencies in it.

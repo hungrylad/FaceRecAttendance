@@ -1,12 +1,16 @@
 import tkinter as tk
 from tkinter import messagebox
 import subprocess
+from AttendanceViewer import attendance_viewer
+from FaceDataTrainer import train_face_data_model
+from FaceRecognizer import face_recognizer
+from FaceDataCollector import face_data_collector
 
 # Function to handle Register New Student (to invoke FaceDataCollector.py)
 def register_new_student():
     try:
-        # Call the FaceDataCollector.py script using subprocess
-        subprocess.run(["python", "FaceDataCollector.py"], check=True)
+        # Call the face_data_collector function
+        face_data_collector()
         messagebox.showinfo("Register New Student", "Student registration process completed successfully.")
     except subprocess.CalledProcessError:
         messagebox.showerror("Error", "An error occurred while registering the new student.")
@@ -14,8 +18,8 @@ def register_new_student():
 # Function to handle Take Attendance (to invoke FaceRecognizer.py)
 def take_attendance():
     try:
-        # Call the FaceRecognizer.py script using subprocess
-        subprocess.run(["python", "FaceRecognizer.py"], check=True)
+        # Call the face_recognizer function
+        face_recognizer()
         messagebox.showinfo("Take Attendance", "Attendance process completed successfully.")
     except subprocess.CalledProcessError:
         messagebox.showerror("Error", "An error occurred while taking attendance.")
@@ -23,11 +27,11 @@ def take_attendance():
 # Function to handle View Attendance (to invoke AttendanceViewer.py)
 def view_attendance():
     try:
-        # Call the AttendanceViewer.py script using subprocess
-        subprocess.run(["python", "AttendanceViewer.py"], check=True)
+        # Call the attendance_viewer method directly
+        attendance_viewer()
         messagebox.showinfo("View Attendance", "Displaying attendance records...")
-    except subprocess.CalledProcessError:
-        messagebox.showerror("Error", "An error occurred while displaying attendance records.")
+    except Exception as e:
+        messagebox.showerror("Error", f"An error occurred while displaying attendance records: {e}")
 
 # Function to handle Exit
 def exit_program():
@@ -36,11 +40,11 @@ def exit_program():
 # Function to handle Train (invoking FaceDataTrainer.py)
 def train_model():
     try:
-        # Call the FaceDataTrainer.py script using subprocess
-        subprocess.run(["python", "FaceDataTrainer.py"], check=True)
+        # Call the train_model function directly
+        train_face_data_model()
         messagebox.showinfo("Train", "Training completed successfully.")
-    except subprocess.CalledProcessError:
-        messagebox.showerror("Error", "An error occurred during the training process.")
+    except Exception as e:
+        messagebox.showerror("Error", f"An error occurred during the training process: {str(e)}")
 
 # Create the main window
 root = tk.Tk()
