@@ -20,7 +20,7 @@ def take_attendance():
     try:
         # Call the face_recognizer function
         face_recognizer()
-        messagebox.showinfo("Take Attendance", "Attendance process completed successfully.")
+        messagebox.showinfo("Mark Attendance", "Attendance process completed successfully.")
     except subprocess.CalledProcessError:
         messagebox.showerror("Error", "An error occurred while taking attendance.")
 
@@ -65,7 +65,7 @@ button_font = ("Helvetica", 16, "bold")  # 1.5x larger than default and bold
 
 # Create buttons with custom colors and larger/bold fonts
 btn_register = tk.Button(root, text="Register New Student", width=25, height=2, command=register_new_student, bg="darkblue", fg="white", font=button_font, padx=10, pady=10)
-btn_take_attendance = tk.Button(root, text="Take Attendance", width=25, height=2, command=take_attendance, bg="darkblue", fg="white", font=button_font, padx=10, pady=10)
+btn_take_attendance = tk.Button(root, text="Mark Attendance", width=25, height=2, command=take_attendance, bg="darkblue", fg="white", font=button_font, padx=10, pady=10)
 btn_view_attendance = tk.Button(root, text="View Attendance", width=25, height=2, command=view_attendance, bg="darkblue", fg="white", font=button_font, padx=10, pady=10)
 btn_exit = tk.Button(root, text="Exit", width=25, height=2, command=exit_program, bg="darkblue", fg="white", font=button_font, padx=10, pady=10)
 
