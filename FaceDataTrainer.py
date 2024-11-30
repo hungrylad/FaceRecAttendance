@@ -40,10 +40,33 @@ def train_face_data_model():
             cv2.imshow("Training on image...", image_np)
             cv2.waitKey(10)
 
-    # Train the recognizer
-    recognizer.train(faces, np.array(ids))
+    if os.path.exists(model_path):
+        recognizer.read(model_path)  # Load the existing model
+        recognizer.update(faces, np.array(ids))  # Update instead of train
+    else:
+        recognizer.train(faces, np.array(ids))  # Train the model from scratch
+
     # Save the trained model
     recognizer.save(model_path)
     print(f"[INFO] Model trained and saved at {model_path}")
 
+    delete_dataset_files(dataset_path)
+
     cv2.destroyAllWindows()
+
+def delete_dataset_files(dataset_path):
+    # Delete all files and folders inside the dataset folder (but not the dataset folder itself)
+    for user_folder in os.listdir(dataset_path):
+        user_path = os.path.join(dataset_path, user_folder)
+        if os.path.isdir(user_path):
+            # Remove all files in the directory
+            for file in os.listdir(user_path):
+                file_path = os.path.join(user_path, file)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+            # Remove the directory itself after deleting its contents
+            os.rmdir(user_path)
+
+    print(f"[INFO] All files and subfolders inside '{dataset_path}' have been deleted.")
+
+# train_face_data_model()
